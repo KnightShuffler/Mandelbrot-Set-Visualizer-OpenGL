@@ -1,4 +1,6 @@
 #include <iostream>
+#include <SDL2/SDL.h>
+#include <GL/glew.h>
 
 int main (int argc, char** argv) {
 	std::cout << "Hello World!" << std::endl;
