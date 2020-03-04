@@ -39,4 +39,20 @@ Display::~Display ()
 }
 
 void Display::update () {
+	// Swap the buffers
+	SDL_GL_SwapWindow (m_window);
+
+	// Poll for events
+	SDL_Event e;
+
+	while (SDL_PollEvent (&e)) {
+		switch (e.type) {
+		// Close Window
+		case SDL_QUIT:
+			m_closed = true;
+			break;
+		default:
+			break;
+		}
+	}
 }

@@ -9,12 +9,12 @@
 int main (int argc, char** argv) {
 	try {
 		// Create the display object
-		Display d (WINDOW_WIDTH, WINDOW_HEIGHT, "Mandelbrot Set");
-		
-		// Exit loop
-		std::cout << "Enter any key to exit..." << std::endl;
-		int exit;
-		while (std::cin >> exit);
+		Display display (WINDOW_WIDTH, WINDOW_HEIGHT, "Mandelbrot Set");
+
+		// Window update loop
+		while (!display.isClosed ()) {
+			display.update ();
+		}
 
 		return 0;
 	}
