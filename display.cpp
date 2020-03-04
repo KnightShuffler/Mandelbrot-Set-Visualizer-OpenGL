@@ -38,6 +38,11 @@ Display::~Display ()
 	SDL_Quit ();
 }
 
+void Display::clear (float r, float g, float b, float a) {
+	glClearColor (r, g, b, a);
+	glClear (GL_COLOR_BUFFER_BIT);
+}
+
 void Display::update () {
 	// Swap the buffers
 	SDL_GL_SwapWindow (m_window);

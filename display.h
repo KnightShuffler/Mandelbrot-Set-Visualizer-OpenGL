@@ -13,6 +13,8 @@ public:
 	// Setters/Getters
 	bool isClosed () const { return m_closed; }
 
+	// Clear the window with a color
+	void clear (float r, float g, float b, float a);
 	// Update the display
 	void update ();
 private:
