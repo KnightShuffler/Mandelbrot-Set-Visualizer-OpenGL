@@ -84,7 +84,7 @@ static GLuint createShader (const std::string& text, GLenum shaderType) {
 	GLint shaderSourceStringsLengths[1];
 	
 	shaderSourceStrings[0] = text.c_str ();
-	shaderSourceStringsLengths[0] = text.length;
+	shaderSourceStringsLengths[0] = (text.length());
 
 	glShaderSource (shader, 1, shaderSourceStrings, shaderSourceStringsLengths);
 	glCompileShader (shader);

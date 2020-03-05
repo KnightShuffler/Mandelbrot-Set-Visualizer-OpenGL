@@ -13,7 +13,11 @@ public:
 	// Make the GPU use this shader program
 	void bind ();
 private:
-	static enum { VERTEX_SHADER = 0u, FRAGMENT_SHADER, NUM_SHADERS };
+	enum { 
+		VERTEX_SHADER = 0u, 
+		FRAGMENT_SHADER, 
+		NUM_SHADERS 
+	};
 
 	GLuint m_program = 0;				// Pointer to the shader program in GPU memory
 	GLuint m_shaders[NUM_SHADERS] = { 0 };	// Pointers to each shader of the program in GPU memory

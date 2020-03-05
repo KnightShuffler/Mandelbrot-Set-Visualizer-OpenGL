@@ -338,5 +338,7 @@ ASALocalRun/
 
 # BeatPulse healthcheck temp database
 healthchecksdb
-/include
+include/GL
+include/glm
+include/SDL2
 /lib
