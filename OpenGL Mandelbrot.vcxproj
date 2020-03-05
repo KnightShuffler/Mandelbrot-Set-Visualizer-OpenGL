@@ -29,6 +29,10 @@
     <ClInclude Include="include\mesh.h" />
     <ClInclude Include="include\shader.h" />
   </ItemGroup>
+  <ItemGroup>
+    <None Include="res\test-shader.frag" />
+    <None Include="res\test-shader.vert" />
+  </ItemGroup>
   <PropertyGroup Label="Globals">
     <VCProjectVersion>16.0</VCProjectVersion>
     <ProjectGuid>{2270545C-8429-43D6-B5C8-4861A9D720CE}</ProjectGuid>

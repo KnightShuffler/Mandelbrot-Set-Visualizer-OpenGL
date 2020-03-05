@@ -3,6 +3,7 @@
 
 #include "display.h"
 #include "mesh.h"
+#include "shader.h"
 
 #define WINDOW_WIDTH  640
 #define WINDOW_HEIGHT 480
@@ -18,9 +19,13 @@ int main (int argc, char** argv) {
 
 		Mesh mesh (vertices, sizeof (vertices) / sizeof (vertices[0]));
 
+		Shader s ("./res/test-shader");
+
 		// Window update loop
 		while (!display.isClosed ()) {
 			display.clear (0.15f, 0.3f, 0.0f, 1.0f);
+
+			s.bind ();
 			mesh.draw ();
 			display.update ();
 		}
