@@ -17,8 +17,8 @@ Shader::Shader (const std::string& fileName) {
 	m_program = glCreateProgram ();
 	
 	// Read the shader files
-	m_shaders[VERTEX_SHADER]   = createShader (loadShader (fileName) + ".vert", GL_VERTEX_SHADER);
-	m_shaders[FRAGMENT_SHADER] = createShader (loadShader (fileName) + ".frag", GL_FRAGMENT_SHADER);
+	m_shaders[VERTEX_SHADER]   = createShader (loadShader (fileName + ".vert"), GL_VERTEX_SHADER);
+	m_shaders[FRAGMENT_SHADER] = createShader (loadShader (fileName + ".frag"), GL_FRAGMENT_SHADER);
 
 	// Add shaders to the program
 	for (unsigned int i = VERTEX_SHADER; i < NUM_SHADERS; i++)
