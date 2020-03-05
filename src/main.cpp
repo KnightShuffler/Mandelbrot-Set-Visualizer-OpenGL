@@ -2,6 +2,7 @@
 #include <string>
 
 #include "display.h"
+#include "mesh.h"
 
 #define WINDOW_WIDTH  640
 #define WINDOW_HEIGHT 480
@@ -11,9 +12,16 @@ int main (int argc, char** argv) {
 		// Create the display object
 		Display display (WINDOW_WIDTH, WINDOW_HEIGHT, "Mandelbrot Set");
 
+		Vertex vertices[] = {	Vertex (glm::vec3 (-1.f,-1.f, 0.f)),
+								Vertex (glm::vec3 (-1.f, 1.f, 0.f)),
+								Vertex (glm::vec3 ( 1.f, 1.f, 0.f)),	};
+
+		Mesh mesh (vertices, sizeof (vertices) / sizeof (vertices[0]));
+
 		// Window update loop
 		while (!display.isClosed ()) {
 			display.clear (0.15f, 0.3f, 0.0f, 1.0f);
+			mesh.draw ();
 			display.update ();
 		}
 
