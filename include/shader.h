@@ -4,6 +4,7 @@
 #include <string>
 
 #include <GL/glew.h>
+#include<glm/glm.hpp>
 
 class Shader {
 public:
@@ -19,6 +20,9 @@ public:
 	}
 	void setFloat (const std::string& name, float v1, float v2) const {
 		glUniform2f (glGetUniformLocation (m_program, name.c_str ()), (float)v1, (float)v2);
+	}
+	void setFloat (const std::string& name, glm::vec2 v) const {
+		glUniform2f (glGetUniformLocation (m_program, name.c_str ()), (float) v.x, (float) v.y);
 	}
 private:
 	enum { 

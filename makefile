@@ -14,7 +14,7 @@ CFLAGS=-I$(IDIR) -std=c++14
 LFLAGS=-lGL -lGLEW -lSDL2
 
 # Name of the class files
-_CLASSES = display shader mesh
+_CLASSES = display shader mesh inputmanager
 
 # Header files
 DEPS = $(patsubst %, $(IDIR)/%.h, $(_CLASSES))
