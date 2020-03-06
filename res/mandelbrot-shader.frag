@@ -18,11 +18,7 @@ void main() {
 			break;
 	}
 
-	if (i > max_iter) {
-		i = 0;
-	}
-
-	float gray = float(i) / float(max_iter);
+	float gray = 1.f - (float(i) / float(max_iter));
 
 	fragColor = vec4( gray, gray, gray, 1.f );
 }
