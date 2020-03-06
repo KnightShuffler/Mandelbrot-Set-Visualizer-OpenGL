@@ -342,3 +342,5 @@ include/GL
 include/glm
 include/SDL2
 /lib
+obj
+mandelbrot
