@@ -1,4 +1,5 @@
 #include <iostream>
+#include <iomanip>
 #include <string>
 
 #include "display.h"
@@ -10,6 +11,8 @@
 #define WINDOW_HEIGHT 576
 
 inline bool isMoving (InputManager& im);
+
+void displayInfo (const glm::vec2& center, const float& s);
 
 int main (int argc, char** argv) {
 	try {
@@ -131,4 +134,9 @@ bool isMoving (InputManager& im) {
 			im.isKeyDown(KEYS::ZOOM_IN) || 
 			im.isKeyDown(KEYS::ZOOM_OUT)
 	);
+}
+
+void displayInfo (const glm::vec2& center, const float& s) {
+	std::cout << "Center: " << std::setprecision(5) << center.x << " + i " << center.y << std::endl;
+	std::cout << "Scale: " << s <<std::endl << std::endl;
 }
