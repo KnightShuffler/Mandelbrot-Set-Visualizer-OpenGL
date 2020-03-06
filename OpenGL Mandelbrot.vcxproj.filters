@@ -46,5 +46,11 @@
     <None Include="res\test-shader.frag">
       <Filter>Resource Files</Filter>
     </None>
+    <None Include="res\mandelbrot-shader.frag">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="res\mandelbrot-shader.vert">
+      <Filter>Resource Files</Filter>
+    </None>
   </ItemGroup>
 </Project>

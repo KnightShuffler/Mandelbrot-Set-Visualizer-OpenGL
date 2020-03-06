@@ -21,13 +21,13 @@ int main (int argc, char** argv) {
 
 		Mesh mesh (vertices, sizeof (vertices) / sizeof (vertices[0]));
 
-		Shader s ("./res/test-shader");
+		Shader mandelbrotShader ("./res/mandelbrot-shader");
 
 		// Window update loop
 		while (!display.isClosed ()) {
 			display.clear (0.f, 0.f, 0.f, 1.0f);
 
-			s.bind ();
+			mandelbrotShader.bind ();
 			mesh.draw ();
 			display.update ();
 		}
