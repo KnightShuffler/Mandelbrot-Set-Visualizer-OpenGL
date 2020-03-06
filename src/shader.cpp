@@ -24,7 +24,13 @@ Shader::Shader (const std::string& fileName) {
 	for (unsigned int i = VERTEX_SHADER; i < NUM_SHADERS; i++)
 		glAttachShader (m_program, m_shaders[i]);
 
-	// Bind the attribute 'position' to the shader
+	// Bind the fragment shader attribute outColor to the program
+	//		Program GPU pointer
+	//		Index of buffer to write to, 0 for color
+	//		Name of attribute
+	glBindFragDataLocation (m_program, 0, "outColor");
+
+	// Bind the attribute 'position' to the program
 	glBindAttribLocation (m_program, 0, "position");
 	
 	// Link the program
@@ -48,6 +54,7 @@ Shader::~Shader () {
 }
 
 void Shader::bind () {
+	// Use this shader program
 	glUseProgram (m_program);
 }
 
@@ -83,26 +90,33 @@ static GLuint createShader (const std::string& text, GLenum shaderType) {
 	const GLchar* shaderSourceStrings[1];
 	GLint shaderSourceStringsLengths[1];
 	
+	// Load the shader
 	shaderSourceStrings[0] = text.c_str ();
 	shaderSourceStringsLengths[0] = (text.length());
-
 	glShaderSource (shader, 1, shaderSourceStrings, shaderSourceStringsLengths);
+
+	// Compile the shader
 	glCompileShader (shader);
 
+	// Check for compilation errors
 	checkShaderError (shader, GL_COMPILE_STATUS, false, "Error: Shader failed to compile");
 
 	return shader;
 }
 
 static void checkShaderError (GLuint shader, GLuint flag, bool isProgram, const std::string& errorMessage) {
+	// Error flag
 	GLint success = 0;
+	// Error message
 	GLchar error[1024] = { 0 };
 
+	// Check if there was an error
 	if (isProgram)
 		glGetProgramiv (shader, flag, &success);
 	else
 		glGetShaderiv (shader, flag, &success);
 
+	// If there was an error, get the error log and throw it as an exception
 	if (success == GL_FALSE) {
 		if (isProgram)
 			glGetProgramInfoLog (shader, sizeof (error), NULL, error);
