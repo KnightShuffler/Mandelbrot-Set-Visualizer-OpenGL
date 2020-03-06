@@ -5,8 +5,8 @@
 #include "mesh.h"
 #include "shader.h"
 
-#define WINDOW_WIDTH  640
-#define WINDOW_HEIGHT 480
+#define WINDOW_WIDTH  1024
+#define WINDOW_HEIGHT 576
 
 int main (int argc, char** argv) {
 	try {
@@ -30,8 +30,8 @@ int main (int argc, char** argv) {
 			mandelbrotShader.bind ();
 			
 			mandelbrotShader.setFloat ("r", (float) WINDOW_WIDTH / (float) WINDOW_HEIGHT);
-			mandelbrotShader.setFloat ("s", 1.f);
-			mandelbrotShader.setFloat ("center", 0.f, 0.f);
+			mandelbrotShader.setFloat ("s", 0.01f);
+			mandelbrotShader.setFloat ("center", -0.761574f, -0.0847596f);
 
 			mesh.draw ();
 			display.update ();
