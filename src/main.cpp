@@ -15,7 +15,9 @@ int main (int argc, char** argv) {
 
 		Vertex vertices[] = {	Vertex (glm::vec3 (-1.f,-1.f, 0.f)),
 								Vertex (glm::vec3 (-1.f, 1.f, 0.f)),
-								Vertex (glm::vec3 ( 1.f, 1.f, 0.f)),	};
+								Vertex (glm::vec3 ( 1.f, 1.f, 0.f)),
+								Vertex (glm::vec3 ( 1.f, -1.f, 0.f)),
+							};
 
 		Mesh mesh (vertices, sizeof (vertices) / sizeof (vertices[0]));
 
