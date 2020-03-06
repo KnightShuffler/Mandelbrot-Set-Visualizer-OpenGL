@@ -28,7 +28,9 @@ Display::Display (int width, int height, const std::string& title)
 		throw std::string("Glew failed to initialize!");
 	}
 
-
+	// Enable blending
+	glEnable (GL_BLEND);
+	glBlendFunc (GL_SRC_ALPHA, GL_ONE_MINUS_SRC_ALPHA);
 }
 
 Display::~Display ()
