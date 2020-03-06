@@ -13,10 +13,10 @@ int main (int argc, char** argv) {
 		// Create the display object
 		Display display (WINDOW_WIDTH, WINDOW_HEIGHT, "Mandelbrot Set");
 
-		Vertex vertices[] = {	Vertex (glm::vec3 (-1.f,-1.f, 0.f)),
-								Vertex (glm::vec3 (-1.f, 1.f, 0.f)),
-								Vertex (glm::vec3 ( 1.f, 1.f, 0.f)),
-								Vertex (glm::vec3 ( 1.f, -1.f, 0.f)),
+		Vertex vertices[] = {	Vertex (glm::vec2 (-1.f,-1.f)),
+								Vertex (glm::vec2 (-1.f, 1.f)),
+								Vertex (glm::vec2 ( 1.f, 1.f)),
+								Vertex (glm::vec2 ( 1.f, -1.f)),
 							};
 
 		Mesh mesh (vertices, sizeof (vertices) / sizeof (vertices[0]));

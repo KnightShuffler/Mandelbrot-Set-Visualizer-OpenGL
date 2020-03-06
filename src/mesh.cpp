@@ -26,7 +26,7 @@ Mesh::Mesh (Vertex* vertices, unsigned int numVertices) {
 	//		Should the GPU Normalize integer data?
 	//		Size of the vertex in bytes, tells the GPU how far to jump to get to the next attribute, can use 0 if tightly packed
 	//		Offset pointer: number of bytes to skip in reading the vertex data
-	glVertexAttribPointer (0, 3, GL_FLOAT, GL_FALSE, sizeof (vertices[0]), (void*)0);
+	glVertexAttribPointer (0, 2, GL_FLOAT, GL_FALSE, sizeof (vertices[0]), (void*)0);
 	//glDisableVertexAttribArray (0);
 
 	// Stop binding instructions to this vertex array object
