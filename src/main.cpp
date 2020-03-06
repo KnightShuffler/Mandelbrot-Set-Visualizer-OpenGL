@@ -25,7 +25,7 @@ int main (int argc, char** argv) {
 
 		// Window update loop
 		while (!display.isClosed ()) {
-			display.clear (0.15f, 0.3f, 0.0f, 1.0f);
+			display.clear (0.f, 0.f, 0.f, 1.0f);
 
 			s.bind ();
 			mesh.draw ();
