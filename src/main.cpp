@@ -28,6 +28,11 @@ int main (int argc, char** argv) {
 			display.clear (0.f, 0.f, 0.f, 1.0f);
 
 			mandelbrotShader.bind ();
+			
+			mandelbrotShader.setFloat ("r", (float) WINDOW_WIDTH / (float) WINDOW_HEIGHT);
+			mandelbrotShader.setFloat ("s", 1.f);
+			mandelbrotShader.setFloat ("center", 0.f, 0.f);
+
 			mesh.draw ();
 			display.update ();
 		}
