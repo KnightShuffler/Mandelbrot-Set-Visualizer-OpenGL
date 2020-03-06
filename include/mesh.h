@@ -6,11 +6,11 @@
 
 class Vertex {
 public:
-	Vertex (const glm::vec3& pos) {
+	Vertex (const glm::vec2& pos) {
 		this->pos = pos;
 	}
 public:
-	glm::vec3 pos;
+	glm::vec2 pos;
 };
 
 class Mesh {

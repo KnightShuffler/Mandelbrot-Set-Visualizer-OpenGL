@@ -1,5 +1,10 @@
-#version 120
+#version 330
+out vec4 fragColor;
+
+in vec2 coord;
+
+int max_iter = 256;
 
 void main() {
-	gl_FragColor = vec4( 1.0f, 0.0f, 0.0f, 0.0f );
+	fragColor = vec4(abs(coord), 0.f, 1.f);
 }
