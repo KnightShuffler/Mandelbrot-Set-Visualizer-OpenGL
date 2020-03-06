@@ -4,10 +4,12 @@ in vec2 coord;
 
 out vec4 fragColor;
 
-#define MAX_ITER 255
+uniform float hue_shift;
+
+#define MAX_ITER 2048
 
 // Converts (normalized) HSV color vector to a (normalized) RGB color vector
-vec3 HSV_to_RGB(float h, float s, float v);
+vec3 HSV_to_RGB(float h, float s, float v, float shift = 0.f);
 
 void main() {
 	// Iteration count
@@ -31,13 +33,13 @@ void main() {
 	float norm_i = float(i) / float(MAX_ITER);
 
 	// Plot colors, if in the set, mark it black (0 value)
-	fragColor = vec4(HSV_to_RGB(norm_i, 1.f, i > MAX_ITER ? 0.f : 1.f), 1.f);
+	fragColor = vec4(HSV_to_RGB(norm_i, 1.f, i > MAX_ITER ? 0.f : 1.f, hue_shift), 1.f);
 }
 
 
-vec3 HSV_to_RGB(float h, float s, float v) {
+vec3 HSV_to_RGB(float h, float s, float v, float shift) {
 	float c = v * s;
-	h = mod((h * 6.f), 6.f);
+	h = mod(((h +  shift) * 6.f), 6.f);
 	float x = c * (1.f - abs(mod(h,2.f) - 1.f));
 
 	if (0 <= h && h < 1)

@@ -42,6 +42,7 @@ int main (int argc, char** argv) {
 		float r = (float) WINDOW_WIDTH / (float) WINDOW_HEIGHT;
 		float s = 2.f;
 		glm::vec2 center(0.f, 0.f);
+		int hue = 240;
 
 		displayInfo (center, s);
 
@@ -63,6 +64,7 @@ int main (int argc, char** argv) {
 			mandelbrotShader.setFloat ("r", r);
 			mandelbrotShader.setFloat ("s", s);
 			mandelbrotShader.setFloat ("center", center);
+			mandelbrotShader.setFloat("hue_shift", (float) hue / 360.f );
 
 			// Draw the quad to the buffer
 			mesh.draw ();
@@ -111,6 +113,12 @@ int main (int argc, char** argv) {
 			}
 			if (inputManager.isKeyDown(KEYS::ZOOM_OUT)) {
 				s *= 1.1f;
+			}
+			if (inputManager.isKeyDown(KEYS::HUE_SHIFT_DOWN)) {
+				hue = (hue + 360 - 1) % 360;
+			}
+			if (inputManager.isKeyDown(KEYS::HUE_SHIFT_UP)) {
+				hue = (hue + 1) % 360;
 			}
 		}
 

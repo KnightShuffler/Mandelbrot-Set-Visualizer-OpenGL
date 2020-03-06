@@ -15,6 +15,9 @@ enum KEYS {
     ZOOM_IN = (unsigned int) SDLK_UP,
     ZOOM_OUT = (unsigned int) SDLK_DOWN,
 
+    HUE_SHIFT_UP = (unsigned int) SDLK_RIGHT,
+    HUE_SHIFT_DOWN = (unsigned int) SDLK_LEFT,
+
     TURBO = (unsigned int) SDLK_SPACE,
 
     QUIT = (unsigned int) SDLK_ESCAPE,
