@@ -10,9 +10,6 @@ public:
 	Display (int width, int height, const std::string& title);
 	virtual ~Display ();
 
-	// Setters/Getters
-	bool isClosed () const { return m_closed; }
-
 	// Clear the window with a color
 	void clear (float r, float g, float b, float a);
 	// Update the display
@@ -20,7 +17,6 @@ public:
 private:
 	SDL_Window* m_window = nullptr;			// Pointer to SDL Window object
 	SDL_GLContext m_glContext = nullptr;	// Pointer to GLContext object
-	bool m_closed = false;
 };
 
 #endif
