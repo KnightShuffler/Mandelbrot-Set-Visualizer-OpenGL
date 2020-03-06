@@ -65,6 +65,8 @@ static std::string loadShader (const std::string& fileName) {
 	std::string output;
 	std::string line;
 
+	std::cout << "Loading shader: " << fileName << std::endl;
+
 	if (file.is_open ()) {
 		while (file.good ()) {
 			getline (file, line);

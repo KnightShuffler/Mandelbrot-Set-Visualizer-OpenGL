@@ -6,10 +6,10 @@ out vec4 fragColor;
 
 uniform float hue_shift;
 
-#define MAX_ITER 2048
+#define MAX_ITER 4096
 
 // Converts (normalized) HSV color vector to a (normalized) RGB color vector
-vec3 HSV_to_RGB(float h, float s, float v, float shift = 0.f);
+vec3 HSV_to_RGB(float h, float s, float v, float shift);
 
 void main() {
 	// Iteration count
